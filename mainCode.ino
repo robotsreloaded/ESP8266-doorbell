@@ -41,9 +41,9 @@ void setup() {
 
 }
 
-void loop() {
+void loop() { //We enter this loop only when the board was unable to connect to saved WiFi or for the first time
   wm.process();
-  if (millis() - startTime > timeout*1000 && !ds)
+  if (millis() - startTime > timeout*1000 && !ds) //Keep configuration portal on for time specified by timeout
   {
     ds = true;
     Serial.println("Entering Deep Sleep Mode");
